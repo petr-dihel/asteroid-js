@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asteroids</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js/jquery/jquery.mobile-1.4.5.min.css">
+	<link rel="shortcut icon" href="">
+	<script src="js/jquery/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery/jquery.mobile-1.4.5.min.js"></script>
+
+	<script src="js/helpers/Box.js"></script>
+	<script src="js/helpers/Constants.js"></script>
+	<script src="js/helpers/Key.js"></script>
+	<script src="js/helpers/Line.js"></script>
+	<script src="js/helpers/SpeedVector.js"></script>
+	<script src="js/helpers/Vector.js"></script>
+
+	<script src="js/GameObjects/GameObject.js"></script>
+	<script src="js/GameObjects/Asteroid.js"></script>
+	<script src="js/GameObjects/Particle.js"></script>
+	<script src="js/GameObjects/PlayerShip.js"></script>
+
+	<script src="js/GameLoop.js"></script>
+	<script src="js/HighScores.js"></script>
+</head>
+<body>
+<div data-role="page" id="mainMenu" >
+	<div data-role="header">
+		<h1>Asteroids</h1>
+	</div>
+
+	<div data-role="main" class="ui-content">
+		<a href="#game" data-transition="fade"
+		   class="ui-btn " data-role="button" role="button">
+			Play
+		</a>
+
+		<a href="#highScore" data-transition="fade"
+		   class="ui-btn " data-role="button" role="button">
+			Highscores
+		</a>
+	</div>
+
+	<div data-role="footer">
+		<h1>Created by Petr Dihel TAMZ PROJECT 2018</h1>
+	</div>
+
+</div>
+
+<div data-role="page" id="game">
+	<canvas id="canvas" style='position:absolute; left:0px; top:0px;background-color: black;'>
+	</canvas>
+	<audio class="audios" id="pewEffect" preload="auto" style="display: none">
+		<source src="audio/pew.mp3" type="audio/mpeg">
+	</audio>
+	<audio class="audios" id="boomEffect" preload="auto" style="display: none">
+		<source src="audio/boom.mp3" type="audio/mpeg">
+	</audio>
+	<audio class="audios" id="thrustEffect" preload="auto" style="display: none">
+		<source src="audio/thrust.mp3" type="audio/mpeg">
+	</audio>
+</div>
+
+<div data-role="page" id="highScore">
+	<div id="content">
+		<div data-role="header">
+			<h1>Highscores</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<a href="#mainMenu" data-transition="fade"
+			   class="ui-btn ui-icon-back ui-btn-icon-left" id="backBtn" data-role="button" role="button">
+				Back
+			</a>
+			<div id="noScore">
+			</div>
+			<div>
+				<ol data-role="listview" id="highScoreList">
+				</ol>
+			</div>
+		</div>
+
+		<div data-role="footer">
+			<h1>Created by Petr Dihel TAMZ PROJECT 2018</h1>
+		</div>
+	</div>
+</div>
+</body>
+</html>
